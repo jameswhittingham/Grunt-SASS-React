@@ -20,7 +20,7 @@ class StyleGuide extends React.Component {
         	<section className="style-guide">
         		
         
-				<main classNameName="container">
+				<main className="container">
 					
 					<div className="jumbotron">
 						<h1>Style Guide</h1>

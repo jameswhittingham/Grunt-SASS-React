@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {Link}        from 'react-router';
 
 class Footer extends React.Component{
 
@@ -16,9 +17,9 @@ class Footer extends React.Component{
 
             <div className="col-md-8">
               <ul className="list-inline">
-                <li><a href="">Link 1</a></li>
-                <li><a href="">Link 2</a></li>
-                <li><a href="">Link 3</a></li>
+                <li><Link to="/" >Link 1</Link></li>
+                <li><Link to="/" >Link 2</Link></li>
+                <li><Link to="/" >Link 3</Link></li>
               </ul>  
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto cumque quisquam vero autem, perspiciatis a voluptatibus nostrum consectetur labore eaque commodi quasi recusandae suscipit, enim ut rem? Architecto, optio, adipisci.</p>
             </div>

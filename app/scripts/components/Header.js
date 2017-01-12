@@ -24,19 +24,20 @@ class Header extends React.Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand logo" href="#/"><img src="assets/images/Logo.jpg"/></a>
+                <Link to="/" className="navbar-brand logo"><img src="assets/images/Logo.jpg"/></Link>
               </div>
+
 
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav navbar-right">
                   <li><Link to="/style-guide">Style guide</Link></li>
-                  <li><a href="#/">Link</a></li>
+                  <li><Link to="/"  href="#/">Link</Link></li>
                   <li className="dropdown">
                     <a href="#/" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links Dropdown <span className="caret"></span></a>
                     <ul className="dropdown-menu">
-                      <li><a href="#/">Link 1</a></li>
-                      <li><a href="#/">Link 2</a></li>
-                      <li><a href="#/">Link 3</a></li>
+                      <li><Link to="/" href="#/">Link 1</Link></li>
+                      <li><Link to="/" href="#/">Link 2</Link></li>
+                      <li><Link to="/" href="#/">Link 3</Link></li>
                     </ul>
                   </li>
                 </ul>
