@@ -600,9 +600,9 @@ class StyleGuide extends React.Component {
 										
 										<label className="style-label">Checkbox list</label>
 										<ul className="list-checkboxes">
-											<li className="checkbox"><label for="chk1">Checkbox 1</label> <input id="chk1" name="chk1" type="checkbox"/><span></span></li>
-											<li className="checkbox"><label for="chk2">Checkbox 2</label> <input id="chk2" name="chk2" type="checkbox"/><span></span></li>
-											<li className="checkbox"><label for="chk3">Checkbox 3</label> <input id="chk3" name="chk3" type="checkbox"/><span></span></li>
+											<li className="checkbox"><label htmlFor="chk1">Checkbox 1</label> <input id="chk1" name="chk1" type="checkbox"/><span></span></li>
+											<li className="checkbox"><label htmlFor="chk2">Checkbox 2</label> <input id="chk2" name="chk2" type="checkbox"/><span></span></li>
+											<li className="checkbox"><label htmlFor="chk3">Checkbox 3</label> <input id="chk3" name="chk3" type="checkbox"/><span></span></li>
 										</ul>
 										
 									</div>
@@ -620,9 +620,9 @@ class StyleGuide extends React.Component {
 										<label className="style-label">Radio list</label>
 										
 										<ul className="list-radios">
-											<li className="radio"><label for="radio01">Radio Button 1</label><input id="radio01" name="radio" type="radio"/><span></span></li>
-											<li className="radio"><label for="radio02">Radio Button 2</label><input id="radio02" name="radio" type="radio"/><span></span></li>
-											<li className="radio"><label for="radio03">Radio Button 3</label><input id="radio03" name="radio" type="radio"/><span></span></li>
+											<li className="radio"><label htmlFor="radio01">Radio Button 1</label><input id="radio01" name="radio" type="radio"/><span></span></li>
+											<li className="radio"><label htmlFor="radio02">Radio Button 2</label><input id="radio02" name="radio" type="radio"/><span></span></li>
+											<li className="radio"><label htmlFor="radio03">Radio Button 3</label><input id="radio03" name="radio" type="radio"/><span></span></li>
 										</ul>
 										
 									</div>

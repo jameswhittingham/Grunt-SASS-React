@@ -4,7 +4,7 @@ var config = require('../config')();
 /* Copy assets to build folder */
 gulp.task('copy', function (done) {
 	/* Copy HTML */
-	gulp.src([config.app + 'index.html',config.app + 'index.html'], {
+	gulp.src([config.app + 'index.html'], {
 		base: config.app
 	})
 	.pipe(gulp.dest(config.build.path));
@@ -20,6 +20,4 @@ gulp.task('copy', function (done) {
 		base: config.assets
 	})
 	.pipe(gulp.dest(config.build.assetPath.base));
-
-	
 });

@@ -6,7 +6,8 @@ import helpers from './Helpers';
 
 const APIUtils = {
 
-  root: '//localhost:3000/api/',
+  //root: '//localhost:3000/api/',
+  root: '/',
 
   normalizeResponse(response) {
     return helpers.processObjectKeys(response, key => { return camel(key); });

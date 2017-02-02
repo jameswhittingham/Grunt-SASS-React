@@ -5,7 +5,7 @@ var cachebust = require('gulp-cache-bust');
 
 // Cache bust
 gulp.task('cache-bust', function (done) {
-	gulp.src(config.build.path +'**/*.html')
+	return gulp.src(config.build.path +'**/*.html')
     .pipe(cachebust({
         type: 'timestamp'
     }))

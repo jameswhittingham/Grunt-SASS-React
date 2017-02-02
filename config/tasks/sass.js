@@ -16,10 +16,9 @@ gulp.task('watch-sass', function () {
 });
 
 /* Copy and minify css */
-gulp.task('minify', function (done) {
-	gulp.src(config.app + '**/*.css', {
-		base: config.app
-	})
-	.pipe(cssnano())
-	.pipe(gulp.dest(config.build.path));
+gulp.task('sass-build', function (done) {
+	return gulp.src(config.assetsPath.styles + 'main.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cssnano())
+    .pipe(gulp.dest(config.build.assetPath.styles));
 });

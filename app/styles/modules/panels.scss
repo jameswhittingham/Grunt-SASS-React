@@ -1,0 +1,9 @@
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+	.selected & {
+		border: solid 1px $brand-primary;
+	}
+}

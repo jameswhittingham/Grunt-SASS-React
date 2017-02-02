@@ -21,28 +21,28 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onUserChange = this.onUserChange.bind(this);
+    //this.onUserChange = this.onUserChange.bind(this);
 
-    this.state = {
+    /*this.state = {
       currentUser: {}
-    };
+    };*/
   }
 
-  onUserChange(err, user) {
+  /*onUserChange(err, user) {
     if ( err ) {
       this.setState({ error: err });
     } else {
       this.setState({ currentUser: user || {}, error: null });
     }
-  }
+  }*/
 
   componentWillMount() {
     console.log('About to mount App');
   }
 
   componentDidMount() {
-    this.unsubscribe = CurrentUserStore.listen(this.onUserChange);
-    CurrentUserActions.checkLoginStatus();
+    //this.unsubscribe = CurrentUserStore.listen(this.onUserChange);
+    //CurrentUserActions.checkLoginStatus();
   }
 
   componentWillUnmount() {
@@ -52,8 +52,8 @@ class App extends React.Component {
   renderChildren() {
     return React.cloneElement(this.props.children, {
       params: this.props.params,
-      query: this.props.query,
-      currentUser: this.state.currentUser
+      query: this.props.query/*,
+      currentUser: this.state.currentUser*/
     });
   }
 

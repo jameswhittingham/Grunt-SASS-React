@@ -11,11 +11,15 @@ var babelify = require('babelify');
 var uglify = require('gulp-uglify');
 
 gulp.task('scripts', function () {
-    return buildScript('index.js');
+    return buildScript('index.js', true);
 });
 
-function buildScript(file) {
-    var props = {entries: [config.assetsPath.scripts + file], debug: true};
+gulp.task('scripts-build', function () {
+    return buildScript('index.js', false);
+});
+
+function buildScript(file, debugOption) {
+    var props = {entries: [config.assetsPath.scripts + file], debug: debugOption};
     var bundler = browserify(props);
     bundler = watchify(bundler);
     bundler.transform(babelify);
@@ -27,7 +31,7 @@ function buildScript(file) {
 
 	    return stream.on('error', handleErrors)
         .pipe(source(file))
-        //.pipe(gulpif(true, streamify(uglify())))
+        .pipe(gulpif(!debugOption, streamify(uglify())))
 	    .pipe(streamify(rename({
 	      basename: 'main'
 	    })))

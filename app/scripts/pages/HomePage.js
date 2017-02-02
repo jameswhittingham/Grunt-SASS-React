@@ -55,16 +55,27 @@ class HomePage extends React.Component {
       </DocumentTitle>
     );
   }
-
 }
 
 class PanelList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {selectedPanel: 0};
+    this.selectPanel = this.selectPanel.bind(this);    
+  }
+
+  selectPanel(id) {
+    this.setState(prevState => ({
+      selectedPanel: id
+    }));
+  }
+
   render() {
     return (
       <ul>
         {this.props.items.map(item => (
 
-          <div key={item.id} className="col-md-4">
+          <div key={item.id} onClick={() => this.selectPanel(item.id)} data-sid={this.state.selectedPanel} data-id={item.id} className={this.state.selectedPanel == item.id ? "col-md-4 selected" : "col-md-4 not-selected"}>
             <div className="panel panel-default">
               <div className="panel-heading" dangerouslySetInnerHTML={{__html: item.title}}></div>
               <div className="panel-body"  dangerouslySetInnerHTML={{__html: item.body}}></div>

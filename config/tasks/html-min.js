@@ -5,7 +5,7 @@ var htmlmin = require('gulp-htmlmin');
 
 /* Minify HTML */
 gulp.task('html-min', function (done) {
-	gulp.src('app/**/*.html')
+	return gulp.src('build/**/*.html')
 	.pipe(htmlmin({collapseWhitespace: true}))
-	.pipe(gulp.dest(config.build.path));
+	.pipe(gulp.dest(config.build.path))
 });

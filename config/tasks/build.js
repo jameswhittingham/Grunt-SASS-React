@@ -9,26 +9,15 @@ gulp.task('build', function (done) {
 
 /* Build production files into build folder */
 gulp.task('build-assets', function (done) {
-	runSequence('concat', ['sass','minify','copy-assets-build','image-min','cache-bust']);
+	process.env.NODE_ENV = 'production';
+	return runSequence('build-everything');
 });
 
-/* Copy assets to build folder */
-gulp.task('copy-assets-build', function (done) {
-	// Copy HTML Includes
-	gulp.src([config.app + 'includes/*.html',config.app + 'templates/*.html'], {
-		base: config.app
-	})
-	.pipe(gulp.dest(config.build.path));
-	
-	// Copy assets
-	gulp.src(config.assets + '**/*.*', {
-		base: config.assets
-	})
-	.pipe(gulp.dest(config.build.assetPath.base));
-
-	// Copy data
-	gulp.src(config.assetsPath.data + '**/*.*', {
-		base: config.assetsPath.data
-	})
-	.pipe(gulp.dest(config.build.data));
+gulp.task('build-everything', function (done) {
+	return runSequence('concat', ['sass-build','copy','scripts-build','image-min','cache-bust'], function(){
+		return runSequence('html-min', function(){
+			console.log('DONE');
+			process.exit();
+		});
+	});
 });
